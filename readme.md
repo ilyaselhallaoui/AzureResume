@@ -42,7 +42,10 @@ func azure functionapp publish <your_function_app>
 
 ## Live Website
 Check out the deployed site: [[https://happy-bush-01f706410.6.azurestaticapps.net](https://happy-bush-01f706410.6.azurestaticapps.net)]
+
 For sometime, this site was accessible over: [[https://ilyaselhallaoui.com](https://ilyaselhallaoui.com)]
+But now this site is an old version of my resume and I manage my techblog and Resume Website using Hugo:
+[[https://ilyaselhallaoui.com](https://ilyaselhallaoui.com)]
 
 ## License00
 This project is open-source under the MIT License.
