@@ -6,16 +6,95 @@
     <meta name="description" content="Portfolio and Cloud Resume of Ilyas El-Hallaoui — Dual Student (B.Sc. Business Informatics, WBH) | DevOps Engineer & IT Consultant @ Sky-E Red GmbH" />
     <meta name="author" content="Ilyas El-Hallaoui" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <!-- Base CSS from template -->
     <link rel="stylesheet" href="css/default.css" />
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/media-queries.css" />
     <link rel="stylesheet" href="css/magnific-popup.css" />
+
+    <!-- Light polish (no external assets) -->
+    <style>
+      :root{
+        --accent:#66ccff;
+        --ink:#e6e6e6;
+        --muted:#a7a7a7;
+      }
+      /* Header: subtle gradient overlay & nicer spacing */
+      #home{
+        position:relative;
+        overflow:hidden;
+      }
+      #home::before{
+        content:"";
+        position:absolute;inset:0;
+        background: radial-gradient(1100px 400px at 20% -10%, rgba(102,204,255,.18), transparent 60%),
+                    radial-gradient(900px 500px at 120% 10%, rgba(255,255,255,.07), transparent 60%);
+        pointer-events:none;
+      }
+      .banner-text h1.responsive-headline{
+        letter-spacing:.3px;
+        text-shadow:0 2px 24px rgba(0,0,0,.25);
+      }
+      .banner-text h3{
+        margin-top:.6rem;
+      }
+      .banner-text a{
+        color:var(--accent);
+        border-bottom:1px dotted transparent;
+      }
+      .banner-text a:hover{
+        border-bottom-color:var(--accent);
+      }
+
+      /* Pills & small badges */
+      .pill{
+        display:inline-block;padding:.28rem .6rem;border-radius:999px;
+        border:1px solid rgba(255,255,255,.1);
+        background:rgba(255,255,255,.04);
+        font-size:.9em;color:var(--ink);
+        margin:.15rem .25rem;
+      }
+
+      /* Sections */
+      h1 span{ letter-spacing:.5px; }
+      h3{ letter-spacing:.2px; }
+      .muted{ color:var(--muted); }
+
+      /* Project cards (still using template grid) */
+      .project-card{
+        padding:1.1rem 1.25rem;border-radius:14px;
+        background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);
+        transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+      }
+      .project-card:hover{
+        transform:translateY(-3px);
+        box-shadow:0 10px 26px rgba(0,0,0,.22);
+        border-color:rgba(102,204,255,.35);
+      }
+      .project-meta{ margin:.35rem 0 .6rem; font-size:.95em; }
+      .project-meta .pill{ font-size:.85em; }
+
+      /* Nicer lists */
+      ul.clean{ list-style:none; padding-left:0; margin:0; }
+      ul.clean li{ padding-left:1.1rem; position:relative; margin:.35rem 0; }
+      ul.clean li::before{
+        content:"•"; position:absolute; left:0; top:0; color:var(--accent);
+      }
+
+      /* Footer links spacing */
+      footer .social-links li a{ opacity:.95; }
+      footer .social-links li a:hover{ opacity:1; }
+    </style>
+
+    <!-- Scripts -->
     <script src="js/modernizr.js"></script>
     <script src="main.js"></script>
     <link rel="shortcut icon" href="favicon.ico" />
   </head>
 
   <body>
+    <!-- Header -->
     <header id="home">
       <nav id="nav-wrap">
         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
@@ -34,17 +113,12 @@
           <h1 class="responsive-headline">Hi, I'm Ilyas El-Hallaoui</h1>
           <p><a href="https://www.ilyaselhallaoui.com" target="_blank">My Personal Website</a></p>
 
-          <h3 style="font-size: 1.2em; color: #555;">
-            <span style="display: inline-block; transition: color 0.3s, transform 0.3s;"
-                  onmouseover="this.style.color='white'; this.style.transform='scale(1.1)';"
-                  onmouseout="this.style.color='#555'; this.style.transform='scale(1)';">Dual Student (B.Sc. Business Informatics, WBH)</span>
-            <span>|</span>
-            <span style="display: inline-block; transition: color 0.3s, transform 0.3s;"
-                  onmouseover="this.style.color='white'; this.style.transform='scale(1.1)';"
-                  onmouseout="this.style.color='#555'; this.style.transform='scale(1)';">DevOps Engineer & IT Consultant @ Sky-E Red GmbH</span>
+          <h3 class="muted" style="font-size:1.2em">
+            <span class="pill">Dual Student · B.Sc. Business Informatics (WBH)</span>
+            <span class="pill">DevOps Engineer & IT Consultant @ Sky-E Red GmbH</span>
           </h3>
 
-          <p>This page has been viewed <strong><a id="counter">Loading...</a></strong> times :)</p>
+          <p>👀 This page has been viewed <strong><a id="counter">Loading...</a></strong> times.</p>
           <ul class="social">
             <li><a href="https://linktr.ee/ilyasdev" target="_blank">Linktree</a></li>
           </ul>
@@ -56,97 +130,96 @@
       </p>
     </header>
 
+    <!-- About -->
     <section id="about">
       <div class="row">
         <div class="nine columns main-col">
-          <h2>ABOUT ME</h2>
+          <h2>About Me</h2>
           <p>
-            I’m Ilyas El-Hallaoui — a 19-year-old DevOps Engineer & IT Consultant based in Rüsselsheim, Germany.  
-            I’m currently pursuing a dual degree (B.Sc. Business Informatics) at Wilhelm Büchner Hochschule while working at Sky-E Red GmbH.
+            I’m a 19-year-old DevOps Engineer & IT Consultant based in Rüsselsheim, Germany — studying Business Informatics (dual) at WBH and building practical systems with Linux, Docker, Kubernetes and Azure.
           </p>
           <p>
-            My main focus is on Cloud, DevOps, and Automation — building practical systems with Linux, Docker, and Azure.  
-            I’m passionate about learning by building, documenting my progress publicly, and inspiring others to get hands-on with technology.
+            I learn by building and share my progress publicly. My goal: make DevOps hands-on again — honest projects, clear documentation, real skills.
           </p>
           <br /><br />
         </div>
       </div>
     </section>
 
+    <!-- Projects -->
     <section id="project">
       <div class="row education">
         <div class="three columns header-col">
           <h1><span>Projects</span></h1>
         </div>
+
         <div class="nine columns main-col">
           <div class="twelve columns">
-            <ul>
-              <li>
-                <h3>Cloud Resume Challenge (Azure)</h3>
-                <strong>A complete cloud-based project hosted on Azure. This website itself is part of it!</strong>
-                <strong> Top 3 Skills Covered:</strong>
-                <ul style="margin: 10px 0; padding-left: 20px;">
-                  <li>✅ Azure Static Web Apps</li>
-                  <li>✅ Azure Functions</li>
-                  <li>✅ Azure Cosmos DB</li>
-                </ul>
-                <a href="https://github.com/ilyaselhallaoui/AzureResume" style="color: #1E90FF; text-decoration: none;">🔍 View on GitHub</a>
-              </li>
-            </ul>
+
+            <div class="project-card">
+              <h3>☁️ Cloud Resume Challenge (Azure)</h3>
+              <p class="project-meta">
+                <span class="pill">Azure Static Web Apps</span>
+                <span class="pill">Azure Functions</span>
+                <span class="pill">Cosmos DB</span>
+              </p>
+              <p><strong>This website</strong> is part of the project: IaC-style thinking, serverless counter, clean deployment.</p>
+              <p><a href="https://github.com/ilyaselhallaoui/AzureResume" style="color:#1E90FF; text-decoration:none;">🔍 View on GitHub</a></p>
+            </div>
 
             <br />
 
-            <ul>
-              <li>
-                <h3>Kubernetes Homelab (k3s)</h3>
-                <strong>My ongoing Kubernetes learning project — building a self-hosted k3s cluster managed with GitOps principles.</strong>
-                <strong> Top 3 Skills Covered:</strong>
-                <ul style="margin: 10px 0; padding-left: 20px;">
-                  <li>✅ Kubernetes (k3s)</li>
-                  <li>✅ Helm & FluxCD</li>
-                  <li>✅ Prometheus & Grafana Monitoring</li>
-                </ul>
-                <a href="https://github.com/ilyaselhallaoui/homelab" style="color: #1E90FF; text-decoration: none;">🔍 View on GitHub</a>
-              </li>
-            </ul>
+            <div class="project-card">
+              <h3>🧪 Lab</h3>
+              <p class="project-meta">
+                <span class="pill">Learning by Building</span>
+                <span class="pill">Small Experiments</span>
+                <span class="pill">WIP Projects</span>
+              </p>
+              <p>A playground of unfinished but valuable experiments — from bash tools to container tests and service prototypes. It’s where I break things to understand them.</p>
+              <p><a href="https://github.com/ilyaselhallaoui/lab" style="color:#1E90FF; text-decoration:none;">🔍 View on GitHub</a></p>
+            </div>
 
             <br />
 
-            <ul>
-              <li>
-                <h3>Pacman App (Docker Compose)</h3>
-                <strong>A containerized Node.js + MongoDB application used to practice Docker networking and Compose stacks.</strong>
-                <strong> Top 3 Skills Covered:</strong>
-                <ul style="margin: 10px 0; padding-left: 20px;">
-                  <li>✅ Docker Networking</li>
-                  <li>✅ Docker Compose</li>
-                  <li>✅ CI/CD Pipeline Integration</li>
-                </ul>
-                <a href="https://github.com/ilyaselhallaoui/pacman-master" style="color: #1E90FF; text-decoration: none;">🔍 View on GitHub</a>
-              </li>
-            </ul>
+            <div class="project-card">
+              <h3>🏡 Kubernetes Homelab (k3s)</h3>
+              <p class="project-meta">
+                <span class="pill">Kubernetes (k3s)</span>
+                <span class="pill">Helm & FluxCD</span>
+                <span class="pill">Prometheus & Grafana</span>
+              </p>
+              <p>My long-term homelab using GitOps. Lightweight cluster now, enterprise mindset later.</p>
+              <p><a href="https://github.com/ilyaselhallaoui/homelab" style="color:#1E90FF; text-decoration:none;">🔍 View on GitHub</a></p>
+            </div>
 
             <br />
 
-            <ul>
-              <li>
-                <h3>Linux & Bash Study Repo</h3>
-                <strong>A personal collection of Linux and Bash projects documenting my scripting progress and automation experiments.</strong>
-                <a href="https://github.com/ilyaselhallaoui/lab" style="color: #1E90FF; text-decoration: none;">🔍 View on GitHub</a>
-              </li>
-            </ul>
+            <div class="project-card">
+              <h3>👾 Pacman App (Docker-Compose)</h3>
+              <p class="project-meta">
+                <span class="pill">Docker Networking</span>
+                <span class="pill">Compose Stacks</span>
+                <span class="pill">CI/CD (next)</span>
+              </p>
+              <p>Node.js + MongoDB demo to practice networking, volumes, and moving towards a full CI/CD pipeline and k8s deployment.</p>
+              <p><a href="https://github.com/ilyaselhallaoui/pacman-master" style="color:#1E90FF; text-decoration:none;">🔍 View on GitHub</a></p>
+            </div>
+
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Resume -->
     <section id="resume">
       <div class="row education">
         <div class="twelve columns">
           <h1><span>Education</span></h1>
           <br />
           <h3>Wilhelm Büchner Hochschule</h3>
-          <p class="info">Business Informatics (B.Sc., Dual Study Program)
+          <p class="info">
+            Business Informatics (B.Sc., Dual Study Program)
             <span>&bull;</span>
             <em class="date">October 2025 – Present</em>
           </p>
@@ -167,10 +240,10 @@
           <h1><span>Skills</span></h1>
         </div>
         <div class="nine columns main-col">
-          <ul>
+          <ul class="clean">
             <li>Linux & Bash</li>
             <li>Docker & Docker Compose</li>
-            <li>Kubernetes (k3s)</li>
+            <li>Kubernetes (k3s), Helm, FluxCD</li>
             <li>Azure (Cloud Fundamentals)</li>
             <li>Workflow Automation (Make.com)</li>
             <li>WordPress</li>
@@ -200,13 +273,14 @@
           <div class="row item">
             <div class="twelve columns">
               <h3>Sky-E Red GmbH</h3>
-              <p class="info">DevOps Engineer & IT Consultant (Dual Student)
+              <p class="info">
+                DevOps Engineer & IT Consultant (Dual Student)
                 <span>&bull;</span>
                 <em class="date">October 2025 – Present</em>
               </p>
-              <ul>
-                <li>Building and automating systems using Linux, Docker, and Azure.</li>
-                <li>Consulting and implementing DevOps workflows in real client environments.</li>
+              <ul class="clean">
+                <li>Build and automate systems with Linux, Docker, and Azure.</li>
+                <li>Consult and implement DevOps workflows for real environments.</li>
               </ul>
             </div>
           </div>
@@ -214,21 +288,24 @@
           <div class="row item">
             <div class="twelve columns">
               <h3>Sky-E Red GmbH</h3>
-              <p class="info">DevOps & Workflow Automation Intern
+              <p class="info">
+                DevOps & Workflow Automation Intern
                 <span>&bull;</span>
                 <em class="date">July 2024 – July 2025</em>
               </p>
-              <ul>
-                <li>Explored DevOps tools and automated workflows with Make.com.</li>
-                <li>Developed Bash scripts to optimize local deployments.</li>
+              <ul class="clean">
+                <li>Automated workflows using Make.com.</li>
+                <li>Wrote Bash scripts for local deployment efficiency.</li>
                 <li>Worked on WordPress sites and Azure integrations.</li>
               </ul>
             </div>
           </div>
+
         </div>
       </div>
     </section>
 
+    <!-- Contact -->
     <section id="contact">
       <div class="row">
         <div class="twelve columns">
@@ -242,6 +319,7 @@
       </div>
     </section>
 
+    <!-- Footer -->
     <footer>
       <div class="row">
         <div class="twelve columns">
@@ -257,7 +335,7 @@
             <a href="https://www.styleshout.com/free-templates/ceevee/" target="_blank">Template by CeeVee</a> |
             <a href="#home">Updated by Ilyas</a>
             <br />
-            <a href="impressum.html" style="color: #66ccff; text-decoration: none;">Über mich &amp; Datenschutz</a>
+            <a href="impressum.html" style="color:#66ccff; text-decoration:none;">Über mich &amp; Datenschutz</a>
           </ul>
         </div>
 
@@ -267,10 +345,9 @@
       </div>
     </footer>
 
+    <!-- JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script>
-      window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\\/script>');
-    </script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\\/script>');</script>
     <script src="js/jquery-migrate-1.2.1.min.js"></script>
     <script src="js/jquery.flexslider.js"></script>
     <script src="js/waypoints.js"></script>
